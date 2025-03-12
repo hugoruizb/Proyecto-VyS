@@ -9,34 +9,70 @@
             margin: 0;
             padding: 0;
             border: 0;
-            overflow: hidden;
+            box-sizing: border-box;
         }
-        
+
         html, body {
             width: 100%;
             height: 100%;
             background: #fff;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+        }
+
+        .dashboard-container, .pdf-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 50vh;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
         iframe {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .doc-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .doc-link:hover {
+            background: #0056b3;
         }
     </style>
 </head>
 <body>
-    <iframe 
-        src="https://lookerstudio.google.com/embed/reporting/c13bbe61-7c91-49a4-ba19-5abaa796d52d/page/Y0GmC"
-        allowfullscreen
-        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms">
-    </iframe>
-    <iframe 
-        src="https://github.com/hugoruizb/Proyecto-VyS/raw/main/Entrega%202.pdf"
-        widt="100%"
-        height="100%">
-    </iframe>
+
+    <div class="dashboard-container">
+        <iframe 
+            src="https://lookerstudio.google.com/embed/reporting/c13bbe61-7c91-49a4-ba19-5abaa796d52d/page/Y0GmC"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms">
+        </iframe>
+    </div>
+
+    <a class="doc-link" href="https://github.com/hugoruizb/Proyecto-VyS/raw/main/Entrega%202.pdf" target="_blank">
+        📄 Descargar PDF
+    </a>
+
+    <div class="pdf-container">
+        <iframe 
+            src="https://docs.google.com/gview?url=https://github.com/hugoruizb/Proyecto-VyS/raw/main/Entrega%202.pdf&embedded=true">
+        </iframe>
+    </div>
+
 </body>
 </html>
